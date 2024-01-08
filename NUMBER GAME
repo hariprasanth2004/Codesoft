@@ -1,14 +1,32 @@
-Generate a random number within a specified range, such as 1 to 100.
+import java.util.Scanner;
 
-2. Prompt the user to enter their guess for the generated number.
+public class numbergame
+{
+  public static void main(String args[])
+  {
+   Scanner keyboard = new Scanner(System.in);
 
-3. Compare the user's guess with the generated number and provide feedback on whether the guess
-is correct, too high, or too low.
+   int a = 1 + (int) (Math.random() * 99);
+   int guess;
 
-4. Repeat steps 2 and 3 until the user guesses the correct number.
+   System.out.println("I am thinking of a number from 1 to 100 ... guess what it is ?");
+   guess = keyboard.nextInt();
 
-You can incorporate additional details as follows:
+   while(guess != a){
+   if (guess > a)
+   {  
+     System.out.println("low");
 
-5. Limit the number of attempts the user has to guess the number.
-6. Add the option for multiple rounds, allowing the user to play again.
-7. Display the user's score, which can be based on the number of attempts taken or rounds won.
+   }
+   else if (guess < a) 
+   {
+    System.out.println("high");
+
+   }
+   else 
+   {
+     System.out.println("Congratulations");
+   }
+   }
+  }
+}
