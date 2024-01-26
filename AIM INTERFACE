@@ -1,55 +1,54 @@
-import java.util.Scanner;  
-public class Atmmachine  
-{  
-    public static void main(String args[] )  
-    {  
+import java.util.Random; 
+import java.util.Scanner; 
+  
+public class codesoft { 
+    public static void main(String[] args) 
+    { 
+  
       
-        int balance = 100000, withdraw, deposit;  
+        int ans, guess; 
+  
           
-      
-        Scanner sc = new Scanner(System.in);  
+        final int MAX = 100; 
+  
+       
+        Scanner in = new Scanner(System.in); 
+  
+       
+        Random rand = new Random(); 
+  
+        boolean correct = false; 
+  
+       
+        answer = rand.nextInt(MAX) + 1; 
+  
+       
+        while (!correct) { 
+  
+            System.out.println( 
+                "Guess a number between 1 and 100: "); 
+  
+           
+            guess = in.nextInt(); 
+  
+            if (guess > ans) { 
+                System.out.println("Too high, try again"); 
+            } 
+  
           
-        while(true)  
-        {  
-            System.out.println("ATM");  
-            System.out.println("Choose 1 for Withdraw");  
-            System.out.println("Choose 2 for Deposit");  
-            System.out.println("Choose 3 for Check Balance");  
-            System.out.println("Choose 4 for EXIT");  
-            System.out.print("Choose the operation you want to perform:");   
-            int choice = sc.nextInt();  
-            switch(choice)  
-            {  
-        case 1:  
-        System.out.print("Enter money to be withdrawn:");  
-        withdraw = sc.nextInt();  
-        if(balance >= withdraw)  
-        {    
-            balance = balance - withdraw;  
-            System.out.println("Please collect your money");  
-        }  
-        else  
-        {    
-            System.out.println("Insufficient Balance");  
-        }  
-        System.out.println("");  
-        break; 
-        case 2:                
-        System.out.print("Enter money to be deposited:");  
-        deposit = sc.nextInt();  
-        balance = balance + deposit;  
-        System.out.println("Your Money has been successfully depsited");  
-        System.out.println("");  
-        break;  
-   
-        case 3:  
-        System.out.println("Balance : "+balance);  
-        System.out.println("");  
-        break;  
-   
-         case 4: 
-        System.exit(0);  
-            }  
-        }  
-    }  
-}  
+            else if (guess < ans) { 
+                System.out.println("Too low, try again"); 
+            } 
+  
+           
+            else { 
+  
+                System.out.println( 
+                    "Yes, you guessed the number."); 
+  
+                correct = true; 
+            } 
+        } 
+        System.exit(0); 
+    } 
+}
